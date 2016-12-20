@@ -15,13 +15,16 @@
 
 
 
+<meta name="description" content="Postgresql的安装配置及基本的使用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="即使天无雨，我亦留此地">
-<meta property="og:url" content="https://github.com/acermansk/acermansk.github.com/2016/12/20/即使天无雨，我亦留此地/index.html">
+<meta property="og:title" content="Postgresql使用">
+<meta property="og:url" content="https://github.com/acermansk/acermansk.github.com/2016/07/26/postgresql/index.html">
 <meta property="og:site_name" content="司振涛的技术博客">
-<meta property="og:updated_time" content="2016-12-20T12:28:22.056Z">
+<meta property="og:description" content="Postgresql的安装配置及基本的使用。">
+<meta property="og:updated_time" content="2016-12-20T12:32:30.197Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="即使天无雨，我亦留此地">
+<meta name="twitter:title" content="Postgresql使用">
+<meta name="twitter:description" content="Postgresql的安装配置及基本的使用。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -53,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>即使天无雨，我亦留此地 | 司振涛的技术博客</title>
+<title>Postgresql使用 | 司振涛的技术博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -253,11 +256,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-即使天无雨，我亦留此地" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-postgresql" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/12/20/即使天无雨，我亦留此地/" class="article-date">
-      <time datetime="2016-12-20T12:28:22.000Z" itemprop="datePublished">2016-12-20</time>
+      <a href="/2016/07/26/postgresql/" class="article-date">
+      <time datetime="2016-07-26T08:25:49.000Z" itemprop="datePublished">2016-07-26</time>
 </a>
 
 
@@ -272,7 +275,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      即使天无雨，我亦留此地
+      Postgresql使用
     </h1>
   
 
@@ -280,8 +283,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数据库/">数据库</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/关系数据库/">关系数据库</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -289,7 +300,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p>Postgresql的安装配置及基本的使用。<br><a id="more"></a></p>
+<h1 id="安装及配置"><a href="#安装及配置" class="headerlink" title="安装及配置"></a>安装及配置</h1><p>执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ yum install postgresql-server</div><div class="line">$ service postgresql initdb</div><div class="line">$ chkconfig postgresql on</div></pre></td></tr></table></figure></p>
+<p>修改配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi /var/lib/pgsql/data/postgresql.conf</div></pre></td></tr></table></figure></p>
+<p>listen_addresses =’*’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi /var/lib/pgsql/data/pg_hba.conf</div></pre></td></tr></table></figure>
+<p>启动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service postgresql start</div></pre></td></tr></table></figure></p>
+<p>修改密码<br>修改pg_hba.conf文件，访问限制列表method改为trust<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ psql -U postgres</div><div class="line">$ ALTER USER postgres WITH PASSWORD &apos;xxx&apos;;</div></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -297,13 +315,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/12/20/即使天无雨，我亦留此地/">即使天无雨，我亦留此地</a></p>
+        <p><span>本文标题:</span><a href="/2016/07/26/postgresql/">Postgresql使用</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">SiZhenTao</a></p>
-        <p><span>发布时间:</span>2016-12-20, 20:28:22</p>
-        <p><span>最后更新:</span>2016-12-20, 20:28:22</p>
+        <p><span>发布时间:</span>2016-07-26, 16:25:49</p>
+        <p><span>最后更新:</span>2016-12-20, 20:32:30</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/12/20/即使天无雨，我亦留此地/" title="即使天无雨，我亦留此地">https://github.com/acermansk/acermansk.github.com/2016/12/20/即使天无雨，我亦留此地/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://github.com/acermansk/acermansk.github.com/2016/12/20/即使天无雨，我亦留此地/　　作者: SiZhenTao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/26/postgresql/" title="Postgresql使用">https://github.com/acermansk/acermansk.github.com/2016/07/26/postgresql/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://github.com/acermansk/acermansk.github.com/2016/07/26/postgresql/　　作者: SiZhenTao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -315,10 +333,16 @@
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/07/26/zookeeper/">
+                    ZooKeeper使用
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/12/20/hello-world/">
-                    Hello World
+                <a href="/2016/07/26/redis/">
+                    Redis使用
                 </a>
             </div>
         
@@ -330,7 +354,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装及配置"><span class="toc-number">1.</span> <span class="toc-text">安装及配置</span></a></li></ol>
         
     </div>
     <style>
@@ -366,7 +390,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"即使天无雨，我亦留此地　| 司振涛的技术博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Postgresql使用　| 司振涛的技术博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -386,13 +410,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/07/26/zookeeper/" title="上一篇: ZooKeeper使用">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/12/20/hello-world/" title="下一篇: Hello World">
+            <a href="/2016/07/26/redis/" title="下一篇: Redis使用">
                 <i class="fa fa-angle-right"></i>
             </a>
         

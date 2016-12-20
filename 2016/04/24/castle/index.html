@@ -15,13 +15,22 @@
 
 
 
+<meta name="description" content="Castle Platform的目标是打造一个高性能、高扩展性的java开发平台，完成通用的管理功能。采用了后台管理集中部署，会员业务系统可分离部署等特点，可独立区分后台管理系统、前端展示系统、用户中心系统。开发者可以在此基础上进行扩展，进而使用一个核心就可以开发出各种互联网产品。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="即使天无雨，我亦留此地">
-<meta property="og:url" content="https://github.com/acermansk/acermansk.github.com/2016/12/20/即使天无雨，我亦留此地/index.html">
+<meta property="og:title" content="Castle开发平台手册">
+<meta property="og:url" content="https://github.com/acermansk/acermansk.github.com/2016/04/24/castle/index.html">
 <meta property="og:site_name" content="司振涛的技术博客">
-<meta property="og:updated_time" content="2016-12-20T12:28:22.056Z">
+<meta property="og:description" content="Castle Platform的目标是打造一个高性能、高扩展性的java开发平台，完成通用的管理功能。采用了后台管理集中部署，会员业务系统可分离部署等特点，可独立区分后台管理系统、前端展示系统、用户中心系统。开发者可以在此基础上进行扩展，进而使用一个核心就可以开发出各种互联网产品。">
+<meta property="og:image" content="https://github.com/acermansk/acermansk.github.com/img/castle/frame.jpg">
+<meta property="og:image" content="https://github.com/acermansk/acermansk.github.com/img/castle/zookeeper.jpg">
+<meta property="og:image" content="https://github.com/acermansk/acermansk.github.com/img/castle/management_login.jpg">
+<meta property="og:image" content="https://github.com/acermansk/acermansk.github.com/img/castle/management.jpg">
+<meta property="og:image" content="https://github.com/acermansk/acermansk.github.com/img/castle/website.jpg">
+<meta property="og:updated_time" content="2016-12-20T12:32:30.194Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="即使天无雨，我亦留此地">
+<meta name="twitter:title" content="Castle开发平台手册">
+<meta name="twitter:description" content="Castle Platform的目标是打造一个高性能、高扩展性的java开发平台，完成通用的管理功能。采用了后台管理集中部署，会员业务系统可分离部署等特点，可独立区分后台管理系统、前端展示系统、用户中心系统。开发者可以在此基础上进行扩展，进而使用一个核心就可以开发出各种互联网产品。">
+<meta name="twitter:image" content="https://github.com/acermansk/acermansk.github.com/img/castle/frame.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -53,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>即使天无雨，我亦留此地 | 司振涛的技术博客</title>
+<title>Castle开发平台手册 | 司振涛的技术博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -253,11 +262,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-即使天无雨，我亦留此地" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-castle" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/12/20/即使天无雨，我亦留此地/" class="article-date">
-      <time datetime="2016-12-20T12:28:22.000Z" itemprop="datePublished">2016-12-20</time>
+      <a href="/2016/04/24/castle/" class="article-date">
+      <time datetime="2016-04-24T04:35:39.000Z" itemprop="datePublished">2016-04-24</time>
 </a>
 
 
@@ -272,7 +281,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      即使天无雨，我亦留此地
+      Castle开发平台手册
     </h1>
   
 
@@ -280,8 +289,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/架构设计/">架构设计</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -289,7 +306,50 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p>Castle Platform的目标是打造一个高性能、高扩展性的java开发平台，完成通用的管理功能。采用了后台管理集中部署，会员业务系统可分离部署等特点，可独立区分后台管理系统、前端展示系统、用户中心系统。开发者可以在此基础上进行扩展，进而使用一个核心就可以开发出各种互联网产品。<br><a id="more"></a></p>
+<div class="github-widget" data-repo="xiangxik/castle-platform"></div>
+
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本平台既适用于开发普通的管理系统，也适用于开发高性能、高扩展性的互联网产品。经过三次大重构，上一版本是<a href="https://github.com/xiangxik/java-platform">https://github.com/xiangxik/java-platform</a>.</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>基于目前最新最热门的java技术</li>
+<li>采用Java8的语法</li>
+<li>采用servlet3.1规范的集成机制</li>
+<li>模块可扩展。直接添加或移除对应模块的jar即可。</li>
+<li>采用spring javaconfig。 达到零spring配置文件。</li>
+<li>支持多种数据操作混用</li>
+<li>采用querydsl通用查询</li>
+<li>包含通用的后台管理</li>
+<li>可以采用单一服务集成，也可选择地使用第三方服务管理框架（支持dubbo或thrift）。</li>
+<li>支持javaconfig和kryo序列化的dubbo</li>
+<li>支持国际化</li>
+</ul>
+<h2 id="原理说明"><a href="#原理说明" class="headerlink" title="原理说明"></a>原理说明</h2><p>采用Dubbo等第三方RMI框架，把业务处理放置于多个Provider， Web服务作为Consumer，对Provider进行调用，从而达到分布式部署。<br><br><img src="/img/castle/frame.jpg" alt="Alt framework"></p>
+<h2 id="主要用到的第三方功能"><a href="#主要用到的第三方功能" class="headerlink" title="主要用到的第三方功能"></a>主要用到的第三方功能</h2><ul>
+<li>spring-mvc（MVC框架）</li>
+<li>spring-security（安全框架）</li>
+<li>spring-data（通用数据处理）</li>
+<li>querydsl（通用查询框架）</li>
+<li>jackson（json处理框架）</li>
+<li>infinispan（分布式缓存）</li>
+<li>jpa（关系数据库）</li>
+<li>redis（键值数据库）</li>
+<li>mongodb（文档数据库）</li>
+<li>neo4j（图形数据库）</li>
+<li>groovy-template（碎片化模板）</li>
+<li>thymeleaf（前端模板）</li>
+<li>extjs6（js组件框架）</li>
+<li>dubbo（分布式服务框架）</li>
+<li>thrift（异构系统服务调用框架）</li>
+</ul>
+<h1 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h1><p>利用castle-platform的部分jar包的组合，可以构建前端web系统和后端管理web系统，前端可以采用dubbo/thrift/webservice调用后端服务。</p>
+<h2 id="把例子启动起来"><a href="#把例子启动起来" class="headerlink" title="把例子启动起来"></a>把例子启动起来</h2><h3 id="1-配置zookeeper"><a href="#1-配置zookeeper" class="headerlink" title="1. 配置zookeeper"></a>1. 配置zookeeper</h3><p>可查阅<a href="http://ken.whenling.com/2016/07/26/zookeeper/" target="_blank" rel="external">http://ken.whenling.com/2016/07/26/zookeeper/</a> 。配置完成后，启动zookeeper。<br><img src="/img/castle/zookeeper.jpg" alt="Alt management"></p>
+<h3 id="2-把castle-example引入到eclipse"><a href="#2-把castle-example引入到eclipse" class="headerlink" title="2. 把castle-example引入到eclipse"></a>2. 把castle-example引入到eclipse</h3><p>查看<a href="https://github.com/xiangxik/castle-example">https://github.com/xiangxik/castle-example</a></p>
+<h3 id="3-配置数据库"><a href="#3-配置数据库" class="headerlink" title="3. 配置数据库"></a>3. 配置数据库</h3><p>创建数据库，并且修改工程文件里面的config.properties中的数据库链接。</p>
+<h3 id="4-启动管理后台"><a href="#4-启动管理后台" class="headerlink" title="4. 启动管理后台"></a>4. 启动管理后台</h3><p>使用jetty9.3.6+、或者tomcat8.5+ 的容器启动项目 example-management-webapp-extjs.<br><img src="/img/castle/management_login.jpg" alt="Alt management_login"><br><img src="/img/castle/management.jpg" alt="Alt management"></p>
+<h3 id="5-启动Provider"><a href="#5-启动Provider" class="headerlink" title="5. 启动Provider"></a>5. 启动Provider</h3><p>打开example-provider. 打开文件com.whenling.example.provider.support.DubboProviderMain。<br>采用java application方式启动。<br>真实环境采用打包后的/bin/start.sh运行。  </p>
+<p>当出现 Dubbo service server started! 表示启动成功。</p>
+<h3 id="6-启动website"><a href="#6-启动website" class="headerlink" title="6. 启动website"></a>6. 启动website</h3><p>使用jetty9.3.6+、或者tomcat8.5+ 的容器启动项目 example-management-webapp-extjs.<br><img src="/img/castle/website.jpg" alt="Alt website"></p>
+
       
     </div>
     
@@ -297,13 +357,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/12/20/即使天无雨，我亦留此地/">即使天无雨，我亦留此地</a></p>
+        <p><span>本文标题:</span><a href="/2016/04/24/castle/">Castle开发平台手册</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">SiZhenTao</a></p>
-        <p><span>发布时间:</span>2016-12-20, 20:28:22</p>
-        <p><span>最后更新:</span>2016-12-20, 20:28:22</p>
+        <p><span>发布时间:</span>2016-04-24, 12:35:39</p>
+        <p><span>最后更新:</span>2016-12-20, 20:32:30</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/12/20/即使天无雨，我亦留此地/" title="即使天无雨，我亦留此地">https://github.com/acermansk/acermansk.github.com/2016/12/20/即使天无雨，我亦留此地/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://github.com/acermansk/acermansk.github.com/2016/12/20/即使天无雨，我亦留此地/　　作者: SiZhenTao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/24/castle/" title="Castle开发平台手册">https://github.com/acermansk/acermansk.github.com/2016/04/24/castle/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://github.com/acermansk/acermansk.github.com/2016/04/24/castle/　　作者: SiZhenTao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -315,10 +375,16 @@
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/05/01/apache-configuration/">
+                    Apache Configuration 详解
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/12/20/hello-world/">
-                    Hello World
+                <a href="/2016/03/05/groovy-template/">
+                    Groovy Template 碎片化模板详解
                 </a>
             </div>
         
@@ -330,7 +396,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">1.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原理说明"><span class="toc-number">1.2.</span> <span class="toc-text">原理说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主要用到的第三方功能"><span class="toc-number">1.3.</span> <span class="toc-text">主要用到的第三方功能</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开始使用"><span class="toc-number">2.</span> <span class="toc-text">开始使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#把例子启动起来"><span class="toc-number">2.1.</span> <span class="toc-text">把例子启动起来</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-配置zookeeper"><span class="toc-number">2.1.1.</span> <span class="toc-text">1. 配置zookeeper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-把castle-example引入到eclipse"><span class="toc-number">2.1.2.</span> <span class="toc-text">2. 把castle-example引入到eclipse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-配置数据库"><span class="toc-number">2.1.3.</span> <span class="toc-text">3. 配置数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-启动管理后台"><span class="toc-number">2.1.4.</span> <span class="toc-text">4. 启动管理后台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-启动Provider"><span class="toc-number">2.1.5.</span> <span class="toc-text">5. 启动Provider</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-启动website"><span class="toc-number">2.1.6.</span> <span class="toc-text">6. 启动website</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -366,7 +432,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"即使天无雨，我亦留此地　| 司振涛的技术博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Castle开发平台手册　| 司振涛的技术博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -386,13 +452,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/05/01/apache-configuration/" title="上一篇: Apache Configuration 详解">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/12/20/hello-world/" title="下一篇: Hello World">
+            <a href="/2016/03/05/groovy-template/" title="下一篇: Groovy Template 碎片化模板详解">
                 <i class="fa fa-angle-right"></i>
             </a>
         
